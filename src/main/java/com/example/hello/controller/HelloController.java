@@ -25,4 +25,9 @@ public class HelloController {
         return var;
     }
 
+    @GetMapping(value = "/request")
+    public String getRequestParam1(@RequestParam String name, @RequestParam String email, @RequestParam String organization) {
+        return name + " " + email + " " + organization;
+    }
+
 }

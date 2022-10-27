@@ -1,6 +1,5 @@
 package com.example.hello;
 
-import com.example.hello.controller.HelloController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

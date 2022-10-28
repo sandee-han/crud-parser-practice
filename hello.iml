@@ -109,5 +109,10 @@
     <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-metadata:2.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-ui:3.0.0" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-spring-webmvc:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.30" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.7.5" level="project" />
+    <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.3.23" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.23" level="project" />
   </component>
 </module>

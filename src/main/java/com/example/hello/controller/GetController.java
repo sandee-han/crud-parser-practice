@@ -1,25 +1,30 @@
 package com.example.hello.controller;
 
 import com.example.hello.domain.dto.MemberDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/get-api")
+@Slf4j  // 로그 남기는 어노테이션
 public class GetController {
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
+        log.info("hello로 요청이 들어왔습니다."); // 로그 남김
         return "Hello World";
     }
 
     @GetMapping(value = "/name")
     public String getName() {
+        log.info("name으로 요청이 들어왔습니다.");
         return "Flature";
     }
 
     @GetMapping(value = "/variable1/{variable}")
     public String getVariable1(@PathVariable String variable) {
+        log.info("getVariable1으로 요청이 들어왔습니다. variable={}", variable);   // 로그에 변수도 설정할 수 있음.
         return variable;
     }
 
@@ -46,6 +51,7 @@ public class GetController {
     @GetMapping(value = "/request3")
     public String getRequestParam3(MemberDto memberDto) {
         return memberDto.toString();
+
     }
 
 }

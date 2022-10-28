@@ -15,13 +15,32 @@ import java.sql.SQLException;
 public class UserDao {
     private final JdbcTemplate jdbcTemplate;
 
-    public void add(UserRequestDto userRequestDto){
-        jdbcTemplate.update("insert into users(id, name, password) values (?, ?, ?);",
+    public int add(UserRequestDto userRequestDto){
+        return jdbcTemplate.update("insert into users(id, name, password) values (?, ?, ?);",
                 userRequestDto.getId(), userRequestDto.getName(), userRequestDto.getPassword());
     }
 
-    public void deleteAll(){
-        jdbcTemplate.update("DELETE FROM users");
+    public int deleteAll(){
+        return jdbcTemplate.update("DELETE FROM users");
     }
+
+    public int delete(String id){
+        return jdbcTemplate.update("DELETE FROM users where id = ?", id);
+    }
+
+    public UserRequestDto findById(String id) {
+        String sql = "select * from users where id = ?";
+        return this.jdbcTemplate.queryForObject(sql, rowMapper, id);
+    }
+
+    RowMapper<UserRequestDto> rowMapper = new RowMapper<UserRequestDto>() {
+        @Override
+        public UserRequestDto mapRow(ResultSet rs, int rowNum) throws SQLException {
+            UserRequestDto userRequestDto = new UserRequestDto(rs.getString("id"),
+                    rs.getString("name"),
+                    rs.getString("password"));
+            return userRequestDto;
+        }
+    };
 
 }

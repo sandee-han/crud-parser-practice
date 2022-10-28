@@ -8,6 +8,8 @@ spring:
     username: root
     password: runwild
 
+# 기본적으로 로컬을 바라보도록
+
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

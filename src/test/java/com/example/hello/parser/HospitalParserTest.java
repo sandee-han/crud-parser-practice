@@ -4,6 +4,8 @@ import com.example.hello.domain.dto.Hospital;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class HospitalParserTest {
@@ -21,8 +23,8 @@ class HospitalParserTest {
         assertEquals("의원", hospital.getOpenServiceName());  // col: 1
         assertEquals(3620000,hospital.getOpenLocalGovernmentCode());    // col: 2
         assertEquals("PHMA119993620020041100004",hospital.getManagementNumber());   //col: 4
-        assertEquals(19990612, hospital.getLicenseDate()); // col: 5
-        assertEquals(6, hospital.getBusinessStatus());  // col: 7
+        assertEquals(LocalDateTime.of(1999, 06, 12, 0, 0, 0), hospital.getLicenseDate()); // col: 5
+        assertEquals(1, hospital.getBusinessStatus());  // col: 7
         assertEquals(13, hospital.getBusinessStatusCode()); // col: 9
         assertEquals("062-515-2875", hospital.getPhone());  // col: 15
         assertEquals("광주광역시 북구 풍향동 565번지 4호 3층", hospital.getFullAddress());    // col: 18

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/user")
 public class UserController {
     private final UserDao userDao;
-    @RequestMapping(value = "/deleteAll")
+    @DeleteMapping(value = "/deleteAll")
     public int deleteAll() {
         return userDao.deleteAll();
     }
@@ -24,7 +24,7 @@ public class UserController {
         return userDao.delete("1");
     }
 
-    @RequestMapping(value="/add")
+    @PostMapping(value="/add")
     public int add() {
         return userDao.add(new UserRequestDto("1", "chuu", "loona"));
     }

@@ -1,5 +1,6 @@
 package com.example.hello.parser;
 
+import com.example.hello.dao.HospitalDao;
 import com.example.hello.domain.dto.Hospital;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,18 @@ class HospitalParserTest {
 
     @Autowired
     ReadLineContext<Hospital> hospitalReadLineContext;
+
+    @Autowired
+    HospitalDao hospitalDao;
+
+    @Test
+    @DisplayName("Hostpital이 insert가 잘 되는지")
+    void add()  {
+        HospitalParser hp = new HospitalParser();
+        Hospital hospital = hp.parse(line1);
+        hospitalDao.add(hospital);
+        // get이 없어서 assert는 눈으로
+    }
 
     @Test
     void name() throws IOException {

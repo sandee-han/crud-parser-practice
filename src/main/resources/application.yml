@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/bbs
+    url: jdbc:mysql://ec2-15-164-233-75.ap-northeast-2.compute.amazonaws.com:3306/bbs
     username: root
     password: runwild
 
